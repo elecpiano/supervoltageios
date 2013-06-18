@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  SuperVoltage
+
+  Created by Lee Jason on 13-6-8.
+  Copyright (c) 2013年 namiapps. All rights reserved.
+*/
+
+"Home_Play" = "开始游戏";
+"Home_Wiki" = "Koo 百科";
+"Home_Options" = "选项";
+"Home_About" = "关于";
+
+"GameOver_Title" = "游戏结束";
+"GameStart_Level" = "第 %d 关";
