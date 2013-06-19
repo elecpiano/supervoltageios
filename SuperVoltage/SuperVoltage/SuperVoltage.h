@@ -31,6 +31,7 @@
 #import "GamePlayScene.h"
 
 #import "HomeLayer.h"
+#import "LevelPickLayer.h"
 #import "TestLayer.h"
 #import "BoardLayer.h"
 
