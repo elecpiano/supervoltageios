@@ -29,6 +29,7 @@
 #import "Battery.h"
 #import "GameOverPanel.h"
 #import "GameStartPanel.h"
+#import "LevelGroup.h"
 
 #import "GamePlayScene.h"
 

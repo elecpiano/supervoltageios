@@ -173,6 +173,8 @@
 		96951658174DE5B9000D8A6B /* BoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96951657174DE5B9000D8A6B /* BoardLayer.m */; };
 		96A498D1177194C300118BD3 /* LevelPickLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A498D0177194C300118BD3 /* LevelPickLayer.m */; };
 		96A4990A1771BE7A00118BD3 /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A499091771BE7A00118BD3 /* CCScrollLayer.m */; };
+		96A4990D1771CC7B00118BD3 /* CCNineGridSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A4990C1771CC7B00118BD3 /* CCNineGridSprite.m */; };
+		96A499101771DEB900118BD3 /* LevelGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A4990F1771DEB900118BD3 /* LevelGroup.m */; };
 		96BADE99173B4B7B00EE3A09 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BADE98173B4B7B00EE3A09 /* QuartzCore.framework */; };
 		96BADE9B173B4B7B00EE3A09 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BADE9A173B4B7B00EE3A09 /* OpenGLES.framework */; };
 		96BADE9D173B4B7B00EE3A09 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BADE9C173B4B7B00EE3A09 /* OpenAL.framework */; };
@@ -594,6 +596,10 @@
 		96A498D0177194C300118BD3 /* LevelPickLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelPickLayer.m; path = Layers/LevelPickLayer.m; sourceTree = "<group>"; };
 		96A499081771BE7A00118BD3 /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCScrollLayer.h; path = Infrastructure/CCScrollLayer.h; sourceTree = "<group>"; };
 		96A499091771BE7A00118BD3 /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCScrollLayer.m; path = Infrastructure/CCScrollLayer.m; sourceTree = "<group>"; };
+		96A4990B1771CC7B00118BD3 /* CCNineGridSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCNineGridSprite.h; path = Infrastructure/CCNineGridSprite.h; sourceTree = "<group>"; };
+		96A4990C1771CC7B00118BD3 /* CCNineGridSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCNineGridSprite.m; path = Infrastructure/CCNineGridSprite.m; sourceTree = "<group>"; };
+		96A4990E1771DEB900118BD3 /* LevelGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelGroup.h; path = GameObjects/LevelGroup.h; sourceTree = "<group>"; };
+		96A4990F1771DEB900118BD3 /* LevelGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelGroup.m; path = GameObjects/LevelGroup.m; sourceTree = "<group>"; };
 		96BADE95173B4B7B00EE3A09 /* SuperVoltage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperVoltage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BADE98173B4B7B00EE3A09 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		96BADE9A173B4B7B00EE3A09 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1341,6 +1347,8 @@
 				963DE2A61769B92900335EDD /* GameStartPanel.m */,
 				963DE2B91769C3B000335EDD /* PausePanelBase.h */,
 				963DE2BA1769C3B000335EDD /* PausePanelBase.m */,
+				96A4990E1771DEB900118BD3 /* LevelGroup.h */,
+				96A4990F1771DEB900118BD3 /* LevelGroup.m */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -1354,6 +1362,8 @@
 				963A3E47174921AF00A64AE2 /* GameObject.m */,
 				963DE2BC1769D84500335EDD /* HButton.h */,
 				963DE2BD1769D84500335EDD /* HButton.m */,
+				96A4990B1771CC7B00118BD3 /* CCNineGridSprite.h */,
+				96A4990C1771CC7B00118BD3 /* CCNineGridSprite.m */,
 			);
 			name = Infrastructure;
 			sourceTree = "<group>";
@@ -1665,6 +1675,8 @@
 				963DE2BE1769D84600335EDD /* HButton.m in Sources */,
 				96A498D1177194C300118BD3 /* LevelPickLayer.m in Sources */,
 				96A4990A1771BE7A00118BD3 /* CCScrollLayer.m in Sources */,
+				96A4990D1771CC7B00118BD3 /* CCNineGridSprite.m in Sources */,
+				96A499101771DEB900118BD3 /* LevelGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
