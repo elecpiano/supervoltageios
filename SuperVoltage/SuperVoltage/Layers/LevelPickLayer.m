@@ -26,6 +26,7 @@
     if ((self = [super init])) {
         [self loadSpriteSheet];
         [self initBackground];
+        [self initPageTitle];
         [self initScrollLayer];
     }
     return self;
@@ -48,7 +49,24 @@
 }
 
 -(void)initPageTitle{
+
+    // go back button
+    CoolButton *menuItemGoBack = [CoolButton itemWithFile:@"BackButton.png" block:^(id sender) {
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:SCENE_TRANSITION_DURATION scene:[HomeLayer scene] ]];
+    }];
     
+//    CCSprite *goBackNormal = [CCSprite spriteWithFile:@"BackButton.png"];
+//    CCSprite *goBackPressed = [CCSprite spriteWithFile:@"BackButton.png"];
+//    goBackPressed.scale = 0.8;
+//    CCMenuItem *menuItemGoBack = [CCMenuItemSprite itemWithNormalSprite:goBackNormal selectedSprite:goBackPressed block:^(id sender) {
+//        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:SCENE_TRANSITION_DURATION scene:[HomeLayer scene] ]];
+//    }];
+    
+    CCMenu *menu = [CCMenu menuWithItems: menuItemGoBack, nil];
+    [menu setPosition:ccp(dscale(48), WIN_SIZE.height - dscale(48))];
+    
+    // Add the menu to the layer
+    [self addChild:menu z:2];
 }
 
 -(void)initScrollLayer{

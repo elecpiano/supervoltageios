@@ -132,7 +132,7 @@
 
 #pragma mark - Play
 -(void)goTooSelectLevel{
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelPickLayer scene]]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:SCENE_TRANSITION_DURATION scene:[LevelPickLayer scene]]];
 }
 
 #pragma mark - Game Start Panle

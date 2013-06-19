@@ -161,7 +161,7 @@ enum
 - (void) visit
 {
 	[super visit];//< Will draw after glPopScene. 
-	
+    
 	if (self.showPagesIndicator)
 	{
 		int totalScreens = [layers_ count];
@@ -270,7 +270,7 @@ enum
 		return;
     }
 
-	id changePage = [CCMoveTo actionWithDuration:0.3 position: [self positionForPageWithNumber: page]];
+	id changePage = [CCMoveTo actionWithDuration:0.2 position: [self positionForPageWithNumber: page]];
 	changePage = [CCSequence actions: changePage,[CCCallFunc actionWithTarget:self selector:@selector(moveToPageEnded)], nil];
     [self runAction:changePage];
     currentScreen_ = page;

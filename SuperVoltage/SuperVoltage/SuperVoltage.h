@@ -17,6 +17,8 @@
 #import "CellData.h"
 #import "GameObject.h"
 #import "HButton.h"
+#import "CoolButton.h"
+#import "CCNineGridSprite.h"
 #import "CCScrollLayer.h"
 
 #import "PausePanelBase.h"

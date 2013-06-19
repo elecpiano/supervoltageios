@@ -16,6 +16,8 @@
 @property (nonatomic) CGSize size;
 @property (nonatomic) CGFloat edge;
 
++(id)spriteWithFile:(NSString *)filePath edge:(CGFloat)edge;
+
 //@property (nonatomic) CGFloat fixTop;
 //@property (nonatomic) CGFloat fixRight;
 //@property (nonatomic) CGFloat fixBottom;
