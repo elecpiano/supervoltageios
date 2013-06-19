@@ -12,11 +12,30 @@
     
 }
 
+#pragma mark - Scene
+
 +(CCScene *)scene{
     CCScene *scene = [CCScene node];
     LevelPickLayer *layer = [LevelPickLayer node];
     [scene addChild:layer];
     return scene;
+}
+
+#pragma mark - Lifecycle
+-(id)init{
+    if ((self = [super init])) {
+        
+    }
+    return self;
+}
+
+#pragma mark - Initialization
+-(void)initPageTitle{
+    
+}
+
+-(void)initLevels{
+
 }
 
 @end

@@ -17,6 +17,8 @@
 #import "CellData.h"
 #import "GameObject.h"
 #import "HButton.h"
+#import "CCScrollLayer.h"
+
 #import "PausePanelBase.h"
 #import "Cell.h"
 #import "BoardObjectBase.h"

@@ -65,23 +65,21 @@
     
     //Play
     CCMenuItem *menuPlay = [HButton itemWithLayer:self text:NSLocalizedString(@"Home_Play", nil) block:^(id sender) {
-        [self playLevel:nil];
+//        [self playLevel:nil];
+        [self goTooSelectLevel];
     }];
     
-    //Wiki
-    CCMenuItem *menuWiki = [HButton itemWithLayer:self text:NSLocalizedString(@"Home_Wiki", nil) block:^(id sender) {
-        [self playLevel:nil];
-    }];
-
-    //Options
-    CCMenuItem *menuOptins = [HButton itemWithLayer:self text:NSLocalizedString(@"Home_Options", nil) block:^(id sender) {
-        [self playLevel:nil];
-    }];
-
-    //About
-    CCMenuItem *menuAbout = [HButton itemWithLayer:self text:NSLocalizedString(@"Home_About", nil) block:^(id sender) {
-        [self playLevel:nil];
-    }];
+//    //Wiki
+//    CCMenuItem *menuWiki = [HButton itemWithLayer:self text:NSLocalizedString(@"Home_Wiki", nil) block:^(id sender) {
+//    }];
+//
+//    //Options
+//    CCMenuItem *menuOptins = [HButton itemWithLayer:self text:NSLocalizedString(@"Home_Options", nil) block:^(id sender) {
+//    }];
+//
+//    //About
+//    CCMenuItem *menuAbout = [HButton itemWithLayer:self text:NSLocalizedString(@"Home_About", nil) block:^(id sender) {
+//    }];
     
     // Leaderboard & Achievement Menu
     CCMenuItem *menuLeaderboard = [HButton itemWithLayer:self text:@"Leaderboard" block:^(id sender) {
@@ -130,6 +128,11 @@
     id rotateAction = [CCRotateBy actionWithDuration:SUNSHINE_ROTATION_INTERVAL angle:-360];
     id foreverAction = [CCRepeatForever actionWithAction:rotateAction];
     [sunshineSprite runAction:foreverAction];
+}
+
+#pragma mark - Play
+-(void)goTooSelectLevel{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelPickLayer scene]]];
 }
 
 #pragma mark - Game Start Panle

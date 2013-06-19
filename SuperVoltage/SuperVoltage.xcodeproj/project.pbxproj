@@ -172,6 +172,7 @@
 		96951654174DDA77000D8A6B /* TestLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96951653174DDA77000D8A6B /* TestLayer.m */; };
 		96951658174DE5B9000D8A6B /* BoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96951657174DE5B9000D8A6B /* BoardLayer.m */; };
 		96A498D1177194C300118BD3 /* LevelPickLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A498D0177194C300118BD3 /* LevelPickLayer.m */; };
+		96A4990A1771BE7A00118BD3 /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A499091771BE7A00118BD3 /* CCScrollLayer.m */; };
 		96BADE99173B4B7B00EE3A09 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BADE98173B4B7B00EE3A09 /* QuartzCore.framework */; };
 		96BADE9B173B4B7B00EE3A09 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BADE9A173B4B7B00EE3A09 /* OpenGLES.framework */; };
 		96BADE9D173B4B7B00EE3A09 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BADE9C173B4B7B00EE3A09 /* OpenAL.framework */; };
@@ -591,6 +592,8 @@
 		96951657174DE5B9000D8A6B /* BoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardLayer.m; path = Layers/BoardLayer.m; sourceTree = "<group>"; };
 		96A498CF177194C300118BD3 /* LevelPickLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelPickLayer.h; path = Layers/LevelPickLayer.h; sourceTree = "<group>"; };
 		96A498D0177194C300118BD3 /* LevelPickLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelPickLayer.m; path = Layers/LevelPickLayer.m; sourceTree = "<group>"; };
+		96A499081771BE7A00118BD3 /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCScrollLayer.h; path = Infrastructure/CCScrollLayer.h; sourceTree = "<group>"; };
+		96A499091771BE7A00118BD3 /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCScrollLayer.m; path = Infrastructure/CCScrollLayer.m; sourceTree = "<group>"; };
 		96BADE95173B4B7B00EE3A09 /* SuperVoltage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperVoltage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BADE98173B4B7B00EE3A09 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		96BADE9A173B4B7B00EE3A09 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1345,6 +1348,8 @@
 		96E705CB174618C500B5CC52 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				96A499081771BE7A00118BD3 /* CCScrollLayer.h */,
+				96A499091771BE7A00118BD3 /* CCScrollLayer.m */,
 				963A3E46174921AF00A64AE2 /* GameObject.h */,
 				963A3E47174921AF00A64AE2 /* GameObject.m */,
 				963DE2BC1769D84500335EDD /* HButton.h */,
@@ -1659,6 +1664,7 @@
 				963DE2BB1769C3B000335EDD /* PausePanelBase.m in Sources */,
 				963DE2BE1769D84600335EDD /* HButton.m in Sources */,
 				96A498D1177194C300118BD3 /* LevelPickLayer.m in Sources */,
+				96A4990A1771BE7A00118BD3 /* CCScrollLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
