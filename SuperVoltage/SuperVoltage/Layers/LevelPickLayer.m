@@ -43,7 +43,7 @@
 
 -(void)initBackground{
     //background
-    CCSprite *backgroundSprite = [CCSprite spriteWithSpriteFrameName:@"HomeBackground.png"];
+    CCSprite *backgroundSprite = [CCSprite spriteWithSpriteFrameName:@"PageBackground.png"];
     backgroundSprite.scale = 8;
     backgroundSprite.position = WINCENTER;
     [pageSpritesheet addChild:backgroundSprite z:0];
@@ -57,13 +57,6 @@
     CoolButton *menuItemGoBack = [CoolButton itemWithFile:@"BackButton.png" block:^(id sender) {
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:SCENE_TRANSITION_DURATION scene:[HomeLayer scene] ]];
     }];
-    
-//    CCSprite *goBackNormal = [CCSprite spriteWithFile:@"BackButton.png"];
-//    CCSprite *goBackPressed = [CCSprite spriteWithFile:@"BackButton.png"];
-//    goBackPressed.scale = 0.8;
-//    CCMenuItem *menuItemGoBack = [CCMenuItemSprite itemWithNormalSprite:goBackNormal selectedSprite:goBackPressed block:^(id sender) {
-//        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:SCENE_TRANSITION_DURATION scene:[HomeLayer scene] ]];
-//    }];
     
     CCMenu *menu = [CCMenu menuWithItems: menuItemGoBack, nil];
     [menu setPosition:ccp(dscale(48), WIN_SIZE.height - dscale(48))];

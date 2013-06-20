@@ -59,14 +59,15 @@ static CGFloat CLOUD_FLICKER_INTERVAL = 1;
 static CGFloat PAUSE_PANEL_MOVEMENT_DURATION = 0.3;
 
 #pragma mark - Home Layer
-static CGFloat SUNSHINE_ROTATION_INTERVAL = 8;
+static CGFloat SUNSHINE_ROTATION_INTERVAL = 10;
 
 #pragma mark - Z Index
 // home layer
 static int Z_INDEX_HOME_LAYER_BASE = 1;//background
-static int Z_INDEX_HOME_LAYER_TITLE = 2;
-static int Z_INDEX_HOME_LAYER_MENU = 3;
-static int Z_INDEX_HOME_LAYER_PAUSE_PANEL = 4;//pause panel
+static int Z_INDEX_HOME_LAYER_SUNSHINE = 2;//sunshine
+static int Z_INDEX_HOME_LAYER_TITLE = 3;
+static int Z_INDEX_HOME_LAYER_MENU = 4;
+static int Z_INDEX_HOME_LAYER_PAUSE_PANEL = 5;//pause panel
 
 // level pick layer
 static int Z_INDEX_LEVELPICK_LAYER_BASE = 0;

@@ -26,29 +26,30 @@
     //level
     _spritesheet = [CCSpriteBatchNode batchNodeWithFile:@"LevelPickTexture.png"];
     [self addChild:_spritesheet z:Z_INDEX_LEVELPICK_LAYER_ITEM];
+    _spritesheet.position = WINCENTER;
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"LevelPickTexture.plist"];
 }
 
 -(void)initBackground{
     CCNineGridSprite *background = [CCNineGridSprite spriteWithFile:@"LevelGroupBackground.png" edge:dscale(10)];
 //    CCNineGridSprite *background = [CCNineGridSprite spriteWithSpritesheet:_spritesheet baseName:@"LevelGroupBackground" edge:dscale(10)];
-    background.position = ccp( WIN_SIZE.width/2 , WIN_SIZE.height/2 );
+    background.position = WINCENTER;
     background.size = CGSizeMake(WIN_SIZE.width*0.8, WIN_SIZE.height*0.8);
     [self addChild:background];
-    
-//    CCSprite *background = [CCSprite spriteWithSpriteFrameName:@"LevelGroupBackground.png"];
-//    background.scale = 5;
-//	background.position =  ccp( WIN_SIZE.width/2 , WIN_SIZE.height/2 );
-//    [self addChild:background];
 }
+
+int levelGroupRowCount=4;
+int levelGroupColumnCount=3;
 
 -(void)populateLevels{
     //todo: load from local persistense data using groupIndex key data
-    for (int row = 0; row < 5; row++) {
-        for (int column = 0 ; column<4; column++) {
+    
+    //IMPORTANT: the value of 'row' grows from top to down
+    for (int row = 0; row < levelGroupRowCount; row++) {
+        for (int column = 0 ; column<levelGroupColumnCount; column++) {
             Level *level = [[Level alloc] initWithSpritesheet:_spritesheet locked:NO stars:1 highlighted:NO];
             [self addChild:level];
-            level.position = ccp(column*dscale(30), (5-row)*dscale(30));
+            level.position = ccp((1 + 2*column - levelGroupColumnCount)*level.contentSize.width*1.1f/2, (levelGroupRowCount- 1 -2*row)*level.contentSize.height*1.1f/2);
         }
     }
 }

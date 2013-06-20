@@ -44,9 +44,14 @@
 -(void)setPosition:(CGPoint)position{
     background.position = position;
     star_2.position = ccp(background.position.x, background.position.y - dscale(20));
-    star_1.position = ccp(star_2.position.x - dscale(10), star_2.position.y);
-    star_3.position = ccp(star_2.position.x + dscale(10), star_2.position.y);
+    star_1.position = ccp(star_2.position.x - star_2.contentSize.width, star_2.position.y);
+    star_3.position = ccp(star_2.position.x + star_2.contentSize.width, star_2.position.y);
     [super setPosition:position];
+}
+
+#pragma mark - Size
+-(CGSize)contentSize{
+    return background.contentSize;
 }
 
 #pragma mark - Highlight

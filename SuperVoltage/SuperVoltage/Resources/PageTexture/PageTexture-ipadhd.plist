@@ -7,20 +7,20 @@
             <key>Beam.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{66,356}}</string>
+                <string>{{2,2},{197,1016}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-1,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{66,356}}</string>
+                <string>{{0,8},{197,1016}}</string>
                 <key>sourceSize</key>
-                <string>{66,356}</string>
+                <string>{199,1024}</string>
             </dict>
-            <key>HomeBackground.png</key>
+            <key>PageBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{70,2},{192,284}}</string>
+                <string>{{201,2},{192,284}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -38,9 +38,9 @@
             <key>realTextureFileName</key>
             <string>PageTexture-ipadhd.png</string>
             <key>size</key>
-            <string>{512,512}</string>
+            <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:78f5e6ed9a0fd4dde5307fda40ef1803$</string>
+            <string>$TexturePacker:SmartUpdate:1f37ab7a76bcfd2a5b66f9e0a1587501$</string>
             <key>textureFileName</key>
             <string>PageTexture-ipadhd.png</string>
         </dict>

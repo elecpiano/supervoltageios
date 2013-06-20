@@ -13,7 +13,6 @@
 
 @implementation HomeLayer{
     CCSpriteBatchNode *pageSpritesheet;
-//    CCSpriteBatchNode *pausePanelSpritesheet;
     GameStartPanel *gameStartPanel;
 }
 
@@ -112,24 +111,17 @@
 }
 
 #pragma mark - Background
--(void)initBackground{
+-(void)initBackground{    
     //background
-    CCSprite *backgroundSprite = [CCSprite spriteWithSpriteFrameName:@"HomeBackground.png"];
-    backgroundSprite.scale = 8;
+    CCSprite *backgroundSprite = [CCSprite spriteWithSpriteFrameName:@"PageBackground.png"];
+    [pageSpritesheet addChild:backgroundSprite];
     backgroundSprite.position = WINCENTER;
-    [pageSpritesheet addChild:backgroundSprite z:0];
+    backgroundSprite.scale = 8;
     
     //sun shine
-    SunShine *sunshine = [[SunShine alloc] initWithSpritesheet:pageSpritesheet];
-    
-//    CCSprite *sunshineSprite = [CCSprite spriteWithSpriteFrameName:@"SunShine.png"];
-//    sunshineSprite.scale = 4;
-//    sunshineSprite.position = WINCENTER;
-//    [pageSpritesheet addChild:sunshineSprite z:1];
-    
-    id rotateAction = [CCRotateBy actionWithDuration:SUNSHINE_ROTATION_INTERVAL angle:-360];
-    id foreverAction = [CCRepeatForever actionWithAction:rotateAction];
-    [sunshine runAction:foreverAction];
+    SunShine *sunshine = [SunShine node];
+    [self addChild:sunshine z:Z_INDEX_HOME_LAYER_SUNSHINE];
+    sunshine.position = WINCENTER;
 }
 
 #pragma mark - Play

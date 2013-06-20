@@ -13,6 +13,6 @@
     
 }
 
--(id)initWithSpritesheet:(CCSpriteBatchNode *)spritesheet;
+//-(id)initWithSpritesheet:(CCSpriteBatchNode *)spritesheet;
 
 @end
