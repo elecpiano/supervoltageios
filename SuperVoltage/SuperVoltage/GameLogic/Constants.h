@@ -64,8 +64,9 @@ static CGFloat SUNSHINE_ROTATION_INTERVAL = 8;
 #pragma mark - Z Index
 // home layer
 static int Z_INDEX_HOME_LAYER_BASE = 1;//background
-static int Z_INDEX_HOME_LAYER_MENU = 2;
-static int Z_INDEX_HOME_LAYER_PAUSE_PANEL = 3;//pause panel
+static int Z_INDEX_HOME_LAYER_TITLE = 2;
+static int Z_INDEX_HOME_LAYER_MENU = 3;
+static int Z_INDEX_HOME_LAYER_PAUSE_PANEL = 4;//pause panel
 
 // board layer
 static int Z_INDEX_BOARD_LAYER_1 = 1;

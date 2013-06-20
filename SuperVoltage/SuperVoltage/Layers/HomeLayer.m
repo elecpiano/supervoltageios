@@ -52,7 +52,7 @@
 -(void)initPageTitle{
     CCSprite *mainPageTitleSprite = [CCSprite spriteWithFile:@"MainPageTitle.png"];
     mainPageTitleSprite.position = ccp( WIN_SIZE.width /2 , WIN_SIZE.height - 80 );
-    [self addChild:mainPageTitleSprite];
+    [self addChild:mainPageTitleSprite z:Z_INDEX_HOME_LAYER_TITLE];
     //    CCLabelTTF *label = [CCLabelTTF labelWithString:@"超电压" fontName:@"Marker Felt" fontSize:64];
     //    [mainPageTitleSprite addChild:label];
 }
