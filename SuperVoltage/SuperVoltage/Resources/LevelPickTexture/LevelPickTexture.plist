@@ -7,6 +7,19 @@
             <key>LevelBackground.png</key>
             <dict>
                 <key>frame</key>
+                <string>{{2,84},{80,80}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{80,80}}</string>
+                <key>sourceSize</key>
+                <string>{80,80}</string>
+            </dict>
+            <key>LevelBackgroundHighlight.png</key>
+            <dict>
+                <key>frame</key>
                 <string>{{2,2},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
@@ -17,14 +30,131 @@
                 <key>sourceSize</key>
                 <string>{80,80}</string>
             </dict>
-            <key>Lock.png</key>
+            <key>LevelGroupBackground_B.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,84},{40,49}}</string>
+                <string>{{84,105},{10,10}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,10}}</string>
+                <key>sourceSize</key>
+                <string>{10,10}</string>
+            </dict>
+            <key>LevelGroupBackground_L.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{84,105},{10,10}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,10}}</string>
+                <key>sourceSize</key>
+                <string>{10,10}</string>
+            </dict>
+            <key>LevelGroupBackground_LB.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,101},{10,10}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,10}}</string>
+                <key>sourceSize</key>
+                <string>{10,10}</string>
+            </dict>
+            <key>LevelGroupBackground_LT.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,89},{10,10}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,10}}</string>
+                <key>sourceSize</key>
+                <string>{10,10}</string>
+            </dict>
+            <key>LevelGroupBackground_M.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,77},{10,10}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,10}}</string>
+                <key>sourceSize</key>
+                <string>{10,10}</string>
+            </dict>
+            <key>LevelGroupBackground_R.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{84,105},{10,10}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,10}}</string>
+                <key>sourceSize</key>
+                <string>{10,10}</string>
+            </dict>
+            <key>LevelGroupBackground_RB.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,65},{10,10}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,10}}</string>
+                <key>sourceSize</key>
+                <string>{10,10}</string>
+            </dict>
+            <key>LevelGroupBackground_RT.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,53},{10,10}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,10}}</string>
+                <key>sourceSize</key>
+                <string>{10,10}</string>
+            </dict>
+            <key>LevelGroupBackground_T.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{84,105},{10,10}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,10}}</string>
+                <key>sourceSize</key>
+                <string>{10,10}</string>
+            </dict>
+            <key>Lock.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{84,2},{40,49}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{40,49}}</string>
                 <key>sourceSize</key>
@@ -33,11 +163,11 @@
             <key>StarBright.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{79,84},{26,24}}</string>
+                <string>{{84,79},{26,24}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{26,24}}</string>
                 <key>sourceSize</key>
@@ -46,11 +176,11 @@
             <key>StarDark.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{53,84},{26,24}}</string>
+                <string>{{84,53},{26,24}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{26,24}}</string>
                 <key>sourceSize</key>
@@ -64,9 +194,9 @@
             <key>realTextureFileName</key>
             <string>LevelPickTexture.png</string>
             <key>size</key>
-            <string>{128,128}</string>
+            <string>{128,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:146385ee1c3241a28e503827e3dc2162$</string>
+            <string>$TexturePacker:SmartUpdate:46ece17705b5edfccd9cd19e8f1bb464$</string>
             <key>textureFileName</key>
             <string>LevelPickTexture.png</string>
         </dict>

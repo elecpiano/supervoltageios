@@ -13,4 +13,8 @@
     
 }
 
+@property (nonatomic) int groupIndex;
+
+-(id)initWithIndex:(int)index;
+
 @end

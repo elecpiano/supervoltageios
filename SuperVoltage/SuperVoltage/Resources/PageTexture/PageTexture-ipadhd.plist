@@ -4,10 +4,23 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>Beam.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{66,356}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{66,356}}</string>
+                <key>sourceSize</key>
+                <string>{66,356}</string>
+            </dict>
             <key>HomeBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,802},{192,284}}</string>
+                <string>{{70,2},{192,284}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -17,32 +30,6 @@
                 <key>sourceSize</key>
                 <string>{192,284}</string>
             </dict>
-            <key>LevelGroupBackground.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,516},{192,284}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{192,284}}</string>
-                <key>sourceSize</key>
-                <string>{192,284}</string>
-            </dict>
-            <key>SunShine.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{512,512}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{512,512}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -51,9 +38,9 @@
             <key>realTextureFileName</key>
             <string>PageTexture-ipadhd.png</string>
             <key>size</key>
-            <string>{1024,1024}</string>
+            <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0aebc4293011d7409b67dd815722037a$</string>
+            <string>$TexturePacker:SmartUpdate:78f5e6ed9a0fd4dde5307fda40ef1803$</string>
             <key>textureFileName</key>
             <string>PageTexture-ipadhd.png</string>
         </dict>

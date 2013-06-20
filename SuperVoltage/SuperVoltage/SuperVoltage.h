@@ -33,6 +33,7 @@
 #import "GameStartPanel.h"
 #import "Level.h"
 #import "LevelGroup.h"
+#import "SunShine.h"
 
 #import "GamePlayScene.h"
 

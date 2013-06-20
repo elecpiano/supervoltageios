@@ -89,6 +89,7 @@
 		9641D25E1772E230005A7A06 /* HButtonShine.png in Resources */ = {isa = PBXBuildFile; fileRef = 9641D2521772E230005A7A06 /* HButtonShine.png */; };
 		9641D27D1772E71E005A7A06 /* MainPageTitle-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 9641D27F1772E71E005A7A06 /* MainPageTitle-ipadhd.png */; };
 		9641D2861772E74E005A7A06 /* MainPageTitle-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9641D2881772E74E005A7A06 /* MainPageTitle-ipad.png */; };
+		9641D28F17730E22005A7A06 /* SunShine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641D28E17730E22005A7A06 /* SunShine.m */; };
 		966CFEFC1754B5A80059FF62 /* ElectricEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 966CFEFB1754B5A80059FF62 /* ElectricEffect.m */; };
 		9672A58917525AA400548A1A /* ElectricNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9672A58817525AA400548A1A /* ElectricNode.m */; };
 		9672A58D17526EDC00548A1A /* ElectricFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9672A58C17526EDC00548A1A /* ElectricFlow.m */; };
@@ -384,6 +385,8 @@
 		9641D28A1772E752005A7A06 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hant"; path = "zh-Hant.lproj/MainPageTitle-ipad.png"; sourceTree = "<group>"; };
 		9641D28B1772E752005A7A06 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file; name = ko; path = "ko.lproj/MainPageTitle-ipad.png"; sourceTree = "<group>"; };
 		9641D28C1772E753005A7A06 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = "ja.lproj/MainPageTitle-ipad.png"; sourceTree = "<group>"; };
+		9641D28D17730E22005A7A06 /* SunShine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SunShine.h; path = GameObjects/SunShine.h; sourceTree = "<group>"; };
+		9641D28E17730E22005A7A06 /* SunShine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SunShine.m; path = GameObjects/SunShine.m; sourceTree = "<group>"; };
 		966CFEFA1754B5A80059FF62 /* ElectricEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElectricEffect.h; path = ElectricEffect/ElectricEffect.h; sourceTree = "<group>"; };
 		966CFEFB1754B5A80059FF62 /* ElectricEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElectricEffect.m; path = ElectricEffect/ElectricEffect.m; sourceTree = "<group>"; };
 		9672A58717525AA400548A1A /* ElectricNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElectricNode.h; path = ElectricEffect/ElectricNode.h; sourceTree = "<group>"; };
@@ -1490,6 +1493,8 @@
 				96A4990F1771DEB900118BD3 /* LevelGroup.m */,
 				9641D1C41772D51C005A7A06 /* Level.h */,
 				9641D1C51772D51C005A7A06 /* Level.m */,
+				9641D28D17730E22005A7A06 /* SunShine.h */,
+				9641D28E17730E22005A7A06 /* SunShine.m */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -1840,6 +1845,7 @@
 				96A499101771DEB900118BD3 /* LevelGroup.m in Sources */,
 				96A49930177216F000118BD3 /* CoolButton.m in Sources */,
 				9641D1C61772D51C005A7A06 /* Level.m in Sources */,
+				9641D28F17730E22005A7A06 /* SunShine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

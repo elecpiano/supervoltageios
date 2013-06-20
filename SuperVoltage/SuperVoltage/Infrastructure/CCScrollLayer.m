@@ -160,7 +160,8 @@ enum
 
 - (void) visit
 {
-	[super visit];//< Will draw after glPopScene. 
+	[super visit];//< Will draw after glPopScene.
+    return;
     
 	if (self.showPagesIndicator)
 	{

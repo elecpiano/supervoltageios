@@ -120,14 +120,16 @@
     [pageSpritesheet addChild:backgroundSprite z:0];
     
     //sun shine
-    CCSprite *sunshineSprite = [CCSprite spriteWithSpriteFrameName:@"SunShine.png"];
-    sunshineSprite.scale = 4;
-    sunshineSprite.position = WINCENTER;
-    [pageSpritesheet addChild:sunshineSprite z:1];
+    SunShine *sunshine = [[SunShine alloc] initWithSpritesheet:pageSpritesheet];
+    
+//    CCSprite *sunshineSprite = [CCSprite spriteWithSpriteFrameName:@"SunShine.png"];
+//    sunshineSprite.scale = 4;
+//    sunshineSprite.position = WINCENTER;
+//    [pageSpritesheet addChild:sunshineSprite z:1];
     
     id rotateAction = [CCRotateBy actionWithDuration:SUNSHINE_ROTATION_INTERVAL angle:-360];
     id foreverAction = [CCRepeatForever actionWithAction:rotateAction];
-    [sunshineSprite runAction:foreverAction];
+    [sunshine runAction:foreverAction];
 }
 
 #pragma mark - Play

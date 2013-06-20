@@ -13,4 +13,9 @@
     
 }
 
+@property (nonatomic) BOOL highlighted;
+@property (nonatomic) BOOL locked;
+
+-(id)initWithSpritesheet:(CCSpriteBatchNode *)spritesheet locked:(BOOL)locked stars:(int)starCount highlighted:(BOOL)highlighted;
+
 @end

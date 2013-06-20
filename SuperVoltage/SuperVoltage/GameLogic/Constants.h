@@ -68,6 +68,11 @@ static int Z_INDEX_HOME_LAYER_TITLE = 2;
 static int Z_INDEX_HOME_LAYER_MENU = 3;
 static int Z_INDEX_HOME_LAYER_PAUSE_PANEL = 4;//pause panel
 
+// level pick layer
+static int Z_INDEX_LEVELPICK_LAYER_BASE = 0;
+static int Z_INDEX_LEVELPICK_LAYER_ITEM = 1;
+static int Z_INDEX_LEVELPICK_LAYER_MENU = 2;
+
 // board layer
 static int Z_INDEX_BOARD_LAYER_1 = 1;
 static int Z_INDEX_BOARD_LAYER_2 = 2;
