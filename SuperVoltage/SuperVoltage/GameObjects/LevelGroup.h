@@ -13,8 +13,6 @@
     
 }
 
-@property (nonatomic) int groupIndex;
-
--(id)initWithIndex:(int)index;
+-(id)addLevel:(int)level;
 
 @end

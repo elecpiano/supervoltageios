@@ -8,6 +8,8 @@
 @class Sparkle;
 
 @class CellData;
+@class LevelScore;
+
 @class GameObject;
 @class HButton;
 @class PausePanelBase;

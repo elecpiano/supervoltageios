@@ -12,7 +12,6 @@
 		96062B1C175F8EB8006595C2 /* BoardObjectBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 96062B1B175F8EB7006595C2 /* BoardObjectBase.m */; };
 		96062B23175F9DE0006595C2 /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 96062B22175F9DDF006595C2 /* Monster.m */; };
 		9639137E175892DF003CAB27 /* GameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9639137D175892DF003CAB27 /* GameLevel.m */; };
-		963913801758A150003CAB27 /* MonsterPattern.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9639137F1758A150003CAB27 /* MonsterPattern.plist */; };
 		963A3E48174921AF00A64AE2 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A3E47174921AF00A64AE2 /* GameObject.m */; };
 		963A3E4B174921BD00A64AE2 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A3E4A174921BD00A64AE2 /* Cell.m */; };
 		963A3E561749229200A64AE2 /* GamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A3E551749229200A64AE2 /* GamePlayScene.m */; };
@@ -206,6 +205,7 @@
 		9678B51C175CED8C00E19F31 /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = 9678B4AE175CED8C00E19F31 /* vec2.c */; };
 		9678B51D175CED8C00E19F31 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = 9678B4AF175CED8C00E19F31 /* vec3.c */; };
 		9678B51E175CED8C00E19F31 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 9678B4B0175CED8C00E19F31 /* vec4.c */; };
+		9691DFFA17784B190068E7A4 /* LevelScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691DFF917784B190068E7A4 /* LevelScore.m */; };
 		96951643174CF04C000D8A6B /* HomeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96951640174CF04C000D8A6B /* HomeLayer.m */; };
 		96951644174CF04C000D8A6B /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96951642174CF04C000D8A6B /* IntroLayer.m */; };
 		96951651174CFB61000D8A6B /* CellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 96951650174CFB61000D8A6B /* CellData.m */; };
@@ -284,7 +284,6 @@
 		96062B22175F9DDF006595C2 /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Monster.m; path = GameObjects/Monster.m; sourceTree = "<group>"; };
 		9639137C175892DF003CAB27 /* GameLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLevel.h; path = GameLogic/GameLevel.h; sourceTree = "<group>"; };
 		9639137D175892DF003CAB27 /* GameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLevel.m; path = GameLogic/GameLevel.m; sourceTree = "<group>"; };
-		9639137F1758A150003CAB27 /* MonsterPattern.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = MonsterPattern.plist; path = GameData/MonsterPattern.plist; sourceTree = "<group>"; };
 		963A3E451749219E00A64AE2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = GameLogic/Constants.h; sourceTree = "<group>"; };
 		963A3E46174921AF00A64AE2 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObject.h; path = Infrastructure/GameObject.h; sourceTree = "<group>"; };
 		963A3E47174921AF00A64AE2 /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObject.m; path = Infrastructure/GameObject.m; sourceTree = "<group>"; };
@@ -652,6 +651,8 @@
 		9678B4B1175CED8C00E19F31 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_cocos2d.txt; sourceTree = "<group>"; };
 		9678B4B2175CED8C00E19F31 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		9678B4B3175CED8C00E19F31 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
+		9691DFF817784B190068E7A4 /* LevelScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelScore.h; path = GameData/LevelScore.h; sourceTree = "<group>"; };
+		9691DFF917784B190068E7A4 /* LevelScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelScore.m; path = GameData/LevelScore.m; sourceTree = "<group>"; };
 		9695163F174CF04B000D8A6B /* HomeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeLayer.h; path = Layers/HomeLayer.h; sourceTree = "<group>"; };
 		96951640174CF04C000D8A6B /* HomeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeLayer.m; path = Layers/HomeLayer.m; sourceTree = "<group>"; };
 		96951641174CF04C000D8A6B /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroLayer.h; path = Layers/IntroLayer.h; sourceTree = "<group>"; };
@@ -1265,8 +1266,9 @@
 			children = (
 				9695164F174CFB60000D8A6B /* CellData.h */,
 				96951650174CFB61000D8A6B /* CellData.m */,
-				9639137F1758A150003CAB27 /* MonsterPattern.plist */,
 				96DFB96617658FB8009DB29B /* GameLevels.plist */,
+				9691DFF817784B190068E7A4 /* LevelScore.h */,
+				9691DFF917784B190068E7A4 /* LevelScore.m */,
 			);
 			name = GameData;
 			sourceTree = "<group>";
@@ -1600,7 +1602,6 @@
 				96BADEBD173B4B7B00EE3A09 /* Icon.png in Resources */,
 				96BADEBF173B4B7B00EE3A09 /* Icon@2x.png in Resources */,
 				96BADEC2173B4B7B00EE3A09 /* iTunesArtwork in Resources */,
-				963913801758A150003CAB27 /* MonsterPattern.plist in Resources */,
 				9678B38D175CBCF900E19F31 /* InfoPlist.strings in Resources */,
 				96752C2017631A400048A1C9 /* CloudTail.plist in Resources */,
 				96DFB95F1763869E009DB29B /* Localizable.strings in Resources */,
@@ -1846,6 +1847,7 @@
 				96A49930177216F000118BD3 /* CoolButton.m in Sources */,
 				9641D1C61772D51C005A7A06 /* Level.m in Sources */,
 				9641D28F17730E22005A7A06 /* SunShine.m in Sources */,
+				9691DFFA17784B190068E7A4 /* LevelScore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

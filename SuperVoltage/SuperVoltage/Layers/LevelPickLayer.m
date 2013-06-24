@@ -10,6 +10,7 @@
 
 @implementation LevelPickLayer{
     CCSpriteBatchNode *pageSpritesheet;
+    NSMutableDictionary *levelGroupAndDataDictionary;
 }
 
 #pragma mark - Scene
@@ -28,7 +29,8 @@
         [self initBackground];
         [self initPageTitle];
         [self initMenu];
-        [self initScrollLayer];
+        
+        [self loadLevels];
     }
     return self;
 }
@@ -65,31 +67,65 @@
     [self addChild:menu z:2];
 }
 
--(void)initScrollLayer{
-    CCScrollLayer *scroller = [CCScrollLayer nodeWithLayers: [self getPages] widthOffset: 0.0f * WIN_SIZE.width];
+#pragma mark - Levels
+-(void)loadLevels{
+    [self loadGameLevelsData];
+    NSDictionary *levelScores = [self loadGameLevelScores];
+    
+    [self populateScrollPages];
+    
+    for (NSDictionary *levelGroupKey in GAME.gameLevelGroups) {
+        LevelGroup *levelGroup = [levelGroupAndDataDictionary objectForKey:levelGroupKey];
+        NSDictionary *levelGroupData = GAME.gameLevelGroups[levelGroupKey];
+        for (NSString *levelKey in levelGroupData) {
+            int levelNumber = [levelKey intValue];
+            [levelGroup addLevel:levelNumber];
+        }
+    }
+}
+
+-(void)loadGameLevelsData{
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"GameLevels" ofType:@"plist"];
+    GAME.gameLevelGroups = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+}
+
+-(NSDictionary *)loadGameLevelScores{
+    //todo : restore game score data using Archiving
+    NSMutableDictionary *gameLevelScores = [[NSMutableDictionary alloc] init];
+    LevelScore *levelScore;
+    levelScore = [[LevelScore alloc] initWithLevel:1 stars:3];
+    [gameLevelScores setObject:levelScore forKey:[NSString stringWithFormat:@"%d", levelScore.stars]];
+    levelScore = [[LevelScore alloc] initWithLevel:2 stars:2];
+    [gameLevelScores setObject:levelScore forKey:[NSString stringWithFormat:@"%d", levelScore.stars]];
+    levelScore = [[LevelScore alloc] initWithLevel:3 stars:1];
+    [gameLevelScores setObject:levelScore forKey:[NSString stringWithFormat:@"%d", levelScore.stars]];
+    
+    return gameLevelScores;
+}
+
+-(void)populateScrollPages{
+    levelGroupAndDataDictionary = [[NSMutableDictionary alloc] init];
+    for (id groupData in GAME.gameLevelGroups) {
+        LevelGroup *group = [[LevelGroup alloc] init];
+        [levelGroupAndDataDictionary setObject:group forKey:groupData];
+    }
+    
+    NSEnumerator *enumerator = [levelGroupAndDataDictionary objectEnumerator];
+    NSMutableArray *groups = [[NSMutableArray alloc] init];
+    for (id group in enumerator) {
+        [groups addObject:group];
+    }
+    
+    CCScrollLayer *scroller = [CCScrollLayer nodeWithLayers:groups widthOffset: 0.0f * WIN_SIZE.width];
 	scroller.pagesIndicatorPosition = ccp(WIN_SIZE.width * 0.5f, 30.0f);
     
-    // New feature: margin offset - to slowdown scrollLayer when scrolling out of it contents.
-    // Comment this line or change marginOffset to screenSize.width to disable this effect.
+//    // New feature: margin offset - to slowdown scrollLayer when scrolling out of it contents.
+//    // Comment this line or change marginOffset to screenSize.width to disable this effect.
 //    scroller.marginOffset = 0.5f * WIN_SIZE.width;
     [self addChild:scroller z:Z_INDEX_LEVELPICK_LAYER_MENU];
 }
 
--(void)initLevels{
-
-}
-
 #pragma mark - Test
-// Returns array of CCLayers - pages for ScrollLayer.
-- (NSArray *) getPages
-{
-    NSMutableArray *pages = [[NSMutableArray alloc] init];
-    for (int n = 0; n < 3; n++) {
-        LevelGroup *group = [[LevelGroup alloc] initWithIndex:n];
-        [pages addObject:group];
-    }
-    
-    return pages;
-}
+
 
 @end

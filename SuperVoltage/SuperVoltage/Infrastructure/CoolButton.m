@@ -11,7 +11,6 @@
 
 @implementation CoolButton{
     CCSprite *aThirdSprite;
-    void (^_theBlock)(id sender);
 }
 
 #pragma mark - Lifecycle

@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface Level : CCNode {
+@interface Level : CCMenuItemSprite {
     
 }
 
+@property (nonatomic) int levelNumber;
 @property (nonatomic) BOOL highlighted;
 @property (nonatomic) BOOL locked;
 
--(id)initWithSpritesheet:(CCSpriteBatchNode *)spritesheet locked:(BOOL)locked stars:(int)starCount highlighted:(BOOL)highlighted;
+-(id)initWithSpritesheet:(CCSpriteBatchNode *)spritesheet levelNumber:(int)levelNumber locked:(BOOL)locked stars:(int)starCount highlighted:(BOOL)highlighted;
 
 @end

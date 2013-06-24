@@ -10,14 +10,17 @@
 
 @implementation LevelGroup{
     CCSpriteBatchNode *_spritesheet;
+    int currentRow;
+    int currentColumn;
+    CCMenu *menu;
 }
 
--(id)initWithIndex:(int)index{
+-(id)init{
     if ((self = [super init])) {
-        self.groupIndex = index;
         [self loadSpritesheet];
         [self initBackground];
-        [self populateLevels];
+        menu = [[CCMenu alloc] init];
+        [self addChild:menu];
     }
     return self;
 }
@@ -40,18 +43,22 @@
 
 int levelGroupRowCount=4;
 int levelGroupColumnCount=3;
-
--(void)populateLevels{
-    //todo: load from local persistense data using groupIndex key data
+-(id)addLevel:(int)levelNumber{
+    Level *level = [[Level alloc] initWithSpritesheet:_spritesheet levelNumber:levelNumber locked:NO stars:1 highlighted:NO];
+    //level.highlighted = YES;
+    level.locked = YES;
     
     //IMPORTANT: the value of 'row' grows from top to down
-    for (int row = 0; row < levelGroupRowCount; row++) {
-        for (int column = 0 ; column<levelGroupColumnCount; column++) {
-            Level *level = [[Level alloc] initWithSpritesheet:_spritesheet locked:NO stars:1 highlighted:NO];
-            [self addChild:level];
-            level.position = ccp((1 + 2*column - levelGroupColumnCount)*level.contentSize.width*1.1f/2, (levelGroupRowCount- 1 -2*row)*level.contentSize.height*1.1f/2);
-        }
+    level.position = ccp((1 + 2*currentColumn - levelGroupColumnCount)*level.contentSize.width*1.1f/2, (levelGroupRowCount- 1 -2*currentRow)*level.contentSize.height*1.1f/2);
+    currentColumn ++;
+    if (currentColumn==levelGroupColumnCount) {
+        currentRow++;
+        currentColumn = 0;
     }
+    [menu addChild:level];
+    return level;
 }
+
+
 
 @end

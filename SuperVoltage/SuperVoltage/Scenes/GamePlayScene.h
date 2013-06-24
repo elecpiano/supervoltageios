@@ -21,6 +21,8 @@
 @property (nonatomic) int movingMonstersCount;
 @property (nonatomic) int awardingBonusesCount;
 @property (nonatomic) int explodingBombCount;
+@property (nonatomic) NSDictionary *gameLevelGroups;
+@property (nonatomic, strong) GameLevel *currentGameLevel;
 
 +(GamePlayScene *)sharedInstance;
 //+(GameState)gameState;

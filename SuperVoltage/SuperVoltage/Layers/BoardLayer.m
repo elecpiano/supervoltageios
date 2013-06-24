@@ -54,7 +54,6 @@
     BOOL usePresets;
     BOOL lightningBurn;
     
-    GameLevel *gameLevel;
     Battery *battery;
     BOOL dischargeEnabled;
     BOOL dischargeBatteryAfterBurning;
@@ -87,7 +86,6 @@ static BoardLayer *instance;
 }
 
 -(void)onEnterTransitionDidFinish{
-    [self loadGameLevel];
     [super onEnterTransitionDidFinish];
     
     /* Setting the Gamestate to Dropping without any cells are actually dropping,
@@ -169,8 +167,7 @@ static BoardLayer *instance;
 
 #pragma mark - GameLevel
 -(void)loadGameLevel{
-    gameLevel = [[GameLevel alloc] init];
-    [battery recharge:[gameLevel initialBatteryBalance]];
+    [battery recharge:[GAME.currentGameLevel initialBatteryBalance]];
 }
 
 #pragma mark - cell reuse pool
@@ -685,7 +682,7 @@ leftConnectionDetector:(BOOL *)leftBorderConnected rightConnectionDetector:(BOOL
             return;
         }
         
-        NSArray *monsterWave = [gameLevel getMonsterWave];
+        NSArray *monsterWave = [GAME.currentGameLevel getMonsterWave];
         
         for (NSNumber *monsterTypeNum in monsterWave) {
             MonsterType monsterType = (MonsterType)[monsterTypeNum intValue];

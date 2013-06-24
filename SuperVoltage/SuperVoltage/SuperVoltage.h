@@ -15,6 +15,8 @@
 #import "Sparkle.h"
 
 #import "CellData.h"
+#import "LevelScore.h"
+
 #import "GameObject.h"
 #import "HButton.h"
 #import "CoolButton.h"

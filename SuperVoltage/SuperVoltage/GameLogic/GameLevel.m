@@ -16,9 +16,9 @@
 }
 
 #pragma mark - Lifecycle
--(id)init{
+-(id)initWithLevelNumber:(int)levelNumber{
     if ((self = [super init])) {
-        _level = 1;
+        _level = levelNumber;
         [self initArrays];
 //        [self loatMonsterWavePattern];
         [self loadGameLevels];
