@@ -10,7 +10,7 @@
 
 @implementation LevelPickLayer{
     CCSpriteBatchNode *pageSpritesheet;
-    NSMutableDictionary *levelGroupAndDataDictionary;
+    NSMutableDictionary *levelGroupDictionary;
 }
 
 #pragma mark - Scene
@@ -72,16 +72,7 @@
     [self loadGameLevelsData];
     NSDictionary *levelScores = [self loadGameLevelScores];
     
-    [self populateScrollPages];
-    
-    for (NSDictionary *levelGroupKey in GAME.gameLevelGroups) {
-        LevelGroup *levelGroup = [levelGroupAndDataDictionary objectForKey:levelGroupKey];
-        NSDictionary *levelGroupData = GAME.gameLevelGroups[levelGroupKey];
-        for (NSString *levelKey in levelGroupData) {
-            int levelNumber = [levelKey intValue];
-            [levelGroup addLevel:levelNumber];
-        }
-    }
+    [self populateScrollPages];    
 }
 
 -(void)loadGameLevelsData{
@@ -104,13 +95,23 @@
 }
 
 -(void)populateScrollPages{
-    levelGroupAndDataDictionary = [[NSMutableDictionary alloc] init];
-    for (id groupData in GAME.gameLevelGroups) {
-        LevelGroup *group = [[LevelGroup alloc] init];
-        [levelGroupAndDataDictionary setObject:group forKey:groupData];
+    levelGroupDictionary = [[NSMutableDictionary alloc] init];
+    int groupCount = [GAME.gameLevelGroups count];
+    int levelIndex = 1;
+    for (int n=1; n<=groupCount; n++) {
+        NSString *key = [NSString stringWithFormat:@"Group-%d",n];
+        LevelGroup *levelGroup = [[LevelGroup alloc] init];
+        [levelGroupDictionary setObject:levelGroup forKey:key];
+        
+        NSDictionary *levelGroupData = GAME.gameLevelGroups[key];
+        int levelCount = [levelGroupData count];
+        for (int j=0; j<levelCount; j++) {
+            [levelGroup addLevel:levelIndex++];
+        }        
     }
     
-    NSEnumerator *enumerator = [levelGroupAndDataDictionary objectEnumerator];
+    //make an array of LevelGroup object to populate the CCScrollLayer
+    NSEnumerator *enumerator = [levelGroupDictionary objectEnumerator];
     NSMutableArray *groups = [[NSMutableArray alloc] init];
     for (id group in enumerator) {
         [groups addObject:group];
