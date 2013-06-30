@@ -72,8 +72,7 @@ static BoardLayer *instance;
     }
 }
 
--(id) init
-{
+-(id) init{
 	if( (self=[super init])) {
         [self loadSpriteSheet];
         [self initArrays];
@@ -126,8 +125,8 @@ static BoardLayer *instance;
 
 -(void)initMenu{
     // restart game
-    CCMenuItem *menuItemRestart = [CCMenuItemFont itemWithString:@"Restart" block:^(id sender) {
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:SCENE_TRANSITION_DURATION scene:[HomeLayer scene] ]];
+    CCMenuItem *menuItemRestart = [CCMenuItemFont itemWithString:@"Quit" block:^(id sender) {
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:SCENE_TRANSITION_DURATION scene:[LevelPickLayer scene] ]];
     }];
     
     CCMenuItem *menuItemTest = [CCMenuItemFont itemWithString:@"test" block:^(id sender) {
@@ -163,11 +162,6 @@ static BoardLayer *instance;
     pausePanelSpritesheet = [CCSpriteBatchNode batchNodeWithFile:@"PausePanelTexture.png"];
     [self addChild:pausePanelSpritesheet z:Z_INDEX_BOARD_LAYER_PAUSE_PANEL];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"PausePanelTexture.plist"];
-}
-
-#pragma mark - GameLevel
--(void)loadGameLevel{
-    [battery recharge:[GAME.currentGameLevel initialBatteryBalance]];
 }
 
 #pragma mark - cell reuse pool
@@ -980,7 +974,13 @@ leftConnectionDetector:(BOOL *)leftBorderConnected rightConnectionDetector:(BOOL
 #pragma mark - Top Bar
 -(void)initTopBar{
     battery = [[Battery alloc] initWithLayer:self spritesheet:monsterSpritesheet];
+    [battery recharge:[GAME.currentGameLevel initialBatteryBalance]];
 }
+//
+//#pragma mark - GameLevel
+//-(void)loadGameLevel{
+//    
+//}
 
 #pragma mark - Game Over
 -(BOOL)isGameOver{

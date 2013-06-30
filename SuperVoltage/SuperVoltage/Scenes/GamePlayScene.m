@@ -28,15 +28,25 @@ static GamePlayScene *instance;
 -(id)init{
     self = [super init];
     if (self!=nil) {
-//        [self addChild:[TestLayer node] z:1];
-        [self addChild:BOARD];
-        [self scheduleUpdate];
+
     }
     return self;
 }
 
+-(void)onEnterTransitionDidFinish{
+    [super onEnterTransitionDidFinish];
+    [self addChild:BOARD];
+    [self scheduleUpdate];
+}
+
+-(void)onEnter{
+    [super onEnter];
+
+}
+
 -(void)onExit{
     instance = nil;
+    [self unscheduleUpdate];
     [super onExit];
 }
 

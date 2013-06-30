@@ -12,7 +12,8 @@
 
 //@property (nonatomic) int level;
 
--(id)initWithLevelNumber:(int)levelNumber;
+//-(id)initWithLevelNumber:(int)levelNumber;
+-(id)initWithLevelData:(NSDictionary *)levelData;
 -(NSArray *)getMonsterWave;
 -(int)initialBatteryBalance;
 

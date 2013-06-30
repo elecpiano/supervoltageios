@@ -11,6 +11,7 @@
 @implementation LevelPickLayer{
     CCSpriteBatchNode *pageSpritesheet;
     NSMutableDictionary *levelGroupDictionary;
+    NSMutableDictionary *gameLevelScores;
 }
 
 #pragma mark - Scene
@@ -70,7 +71,7 @@
 #pragma mark - Levels
 -(void)loadLevels{
     [self loadGameLevelsData];
-    NSDictionary *levelScores = [self loadGameLevelScores];
+    [self loadGameLevelScores];
     
     [self populateScrollPages];    
 }
@@ -80,9 +81,9 @@
     GAME.gameLevelGroups = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
 }
 
--(NSDictionary *)loadGameLevelScores{
+-(void)loadGameLevelScores{
     //todo : restore game score data using Archiving
-    NSMutableDictionary *gameLevelScores = [[NSMutableDictionary alloc] init];
+    gameLevelScores = [[NSMutableDictionary alloc] init];
     LevelScore *levelScore;
     levelScore = [[LevelScore alloc] initWithLevel:1 stars:3];
     [gameLevelScores setObject:levelScore forKey:[NSString stringWithFormat:@"%d", levelScore.stars]];
@@ -90,8 +91,6 @@
     [gameLevelScores setObject:levelScore forKey:[NSString stringWithFormat:@"%d", levelScore.stars]];
     levelScore = [[LevelScore alloc] initWithLevel:3 stars:1];
     [gameLevelScores setObject:levelScore forKey:[NSString stringWithFormat:@"%d", levelScore.stars]];
-    
-    return gameLevelScores;
 }
 
 -(void)populateScrollPages{
@@ -99,14 +98,29 @@
     int groupCount = [GAME.gameLevelGroups count];
     int levelIndex = 1;
     for (int n=1; n<=groupCount; n++) {
-        NSString *key = [NSString stringWithFormat:@"Group-%d",n];
+        NSString *groupKey = [NSString stringWithFormat:@"Group-%d",n];
         LevelGroup *levelGroup = [[LevelGroup alloc] init];
-        [levelGroupDictionary setObject:levelGroup forKey:key];
+        [levelGroupDictionary setObject:levelGroup forKey:groupKey];
         
-        NSDictionary *levelGroupData = GAME.gameLevelGroups[key];
+        NSDictionary *levelGroupData = GAME.gameLevelGroups[groupKey];
         int levelCount = [levelGroupData count];
         for (int j=0; j<levelCount; j++) {
-            [levelGroup addLevel:levelIndex++];
+            //get score
+            
+            int starCount = 0;
+            BOOL isLocked = YES;
+            
+            NSString *levelKey = [NSString stringWithFormat:@"%d",levelIndex];
+            LevelScore *levelScore = gameLevelScores[levelKey];
+            if (levelScore) {
+                starCount = levelScore.stars;
+                isLocked = NO;
+            }
+            
+            NSDictionary *levelData = levelGroupData[levelKey];
+            
+            [levelGroup addLevel:levelKey levelData:levelData locked:isLocked stars:starCount];
+            levelIndex++;
         }        
     }
     

@@ -13,10 +13,9 @@
     
 }
 
-@property (nonatomic) int levelNumber;
+//@property (nonatomic) int levelNumber;
+@property (nonatomic, strong) NSDictionary *levelData;
 @property (nonatomic) BOOL highlighted;
-@property (nonatomic) BOOL locked;
 
--(id)initWithSpritesheet:(CCSpriteBatchNode *)spritesheet levelNumber:(int)levelNumber locked:(BOOL)locked stars:(int)starCount highlighted:(BOOL)highlighted;
-
+-(id)initWithSpritesheet:(CCSpriteBatchNode *)spritesheet levelKey:(NSString *)levelKey levelData:(NSDictionary *)levelData locked:(BOOL)locked stars:(int)starCount;
 @end

@@ -9,19 +9,19 @@
 #import "SuperVoltage.h"
 
 @implementation GameLevel{
-//    NSDictionary *presetMonsterWavePattern;
-    int _level;
-    NSDictionary *gameLevels;
+//    int _level;
+//    NSDictionary *gameLevels;
+    NSDictionary *_levelData;
     NSMutableArray *monsterWaves;
 }
 
 #pragma mark - Lifecycle
--(id)initWithLevelNumber:(int)levelNumber{
+-(id)initWithLevelData:(NSDictionary *)levelData{
     if ((self = [super init])) {
-        _level = levelNumber;
+//        _level = levelNumber;
+        _levelData = levelData;
         [self initArrays];
-//        [self loatMonsterWavePattern];
-        [self loadGameLevels];
+//        [self loadGameLevels];
     }
     return self;
 }
@@ -30,11 +30,11 @@
     monsterWaves = [[NSMutableArray alloc] init];
 }
 
-#pragma mark - persistance
--(void)loadGameLevels{
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"GameLevels" ofType:@"plist"];
-    gameLevels = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-}
+//#pragma mark - persistance
+//-(void)loadGameLevels{
+//    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"GameLevels" ofType:@"plist"];
+//    gameLevels = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+//}
 
 #pragma mark - Monster
 //-(void)loatMonsterWavePattern{
@@ -44,9 +44,9 @@
 
 -(void)rePopulateMonsterWaves{
     [monsterWaves removeAllObjects];
-    NSString *levelKey = [NSString stringWithFormat:@"%d",_level];
-    NSDictionary *levelDict = [gameLevels objectForKey:levelKey];
-    NSArray *waves = [levelDict objectForKey:@"MonsterWavePattern"];
+//    NSString *levelKey = [NSString stringWithFormat:@"%d",_level];
+//    NSDictionary *levelDict = [GAME.gameLevelGroups objectForKey:levelKey];
+    NSArray *waves = [_levelData objectForKey:@"MonsterWavePattern"];
     for (NSArray *wave in waves) {
         [monsterWaves addObject:wave];
     }
@@ -66,9 +66,9 @@
 }
 
 -(int)initialBatteryBalance{
-    NSString *levelKey = [NSString stringWithFormat:@"%d",_level];
-    NSDictionary *levelDict = [gameLevels objectForKey:levelKey];
-    NSNumber *balanceNum = [levelDict objectForKey:@"BatteryBalance"];
+//    NSString *levelKey = [NSString stringWithFormat:@"%d",_level];
+//    NSDictionary *levelDict = [gameLevels objectForKey:levelKey];
+    NSNumber *balanceNum = [_levelData objectForKey:@"BatteryBalance"];
     return [balanceNum intValue];
 }
 

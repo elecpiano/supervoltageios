@@ -13,6 +13,6 @@
     
 }
 
--(id)addLevel:(int)level;
+-(id)addLevel:(NSString *)levelKey levelData:(NSDictionary *)levelData locked:(BOOL)locked stars:(int)starCount;
 
 @end

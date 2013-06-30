@@ -43,10 +43,8 @@
 
 int levelGroupRowCount=4;
 int levelGroupColumnCount=3;
--(id)addLevel:(int)levelNumber{
-    Level *level = [[Level alloc] initWithSpritesheet:_spritesheet levelNumber:levelNumber locked:NO stars:1 highlighted:NO];
-    //level.highlighted = YES;
-    level.locked = YES;
+-(id)addLevel:(NSString *)levelKey levelData:(NSDictionary *)levelData locked:(BOOL)locked stars:(int)starCount{
+    Level *level = [[Level alloc] initWithSpritesheet:_spritesheet levelKey:levelKey levelData:levelData locked:locked stars:starCount];
     
     //IMPORTANT: the value of 'row' grows from top to down
     level.position = ccp((1 + 2*currentColumn - levelGroupColumnCount)*level.contentSize.width*1.1f/2, (levelGroupRowCount- 1 -2*currentRow)*level.contentSize.height*1.1f/2);
