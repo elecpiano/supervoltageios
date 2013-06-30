@@ -13,12 +13,15 @@
     CCSprite *star_1, *star_2, *star_3;
     CCSprite *lock;
     CCLabelTTF *levelName;
+    CCSpriteBatchNode *_spritesheet;
 }
 
 #pragma mark - Lifecycle
 -(id)initWithSpritesheet:(CCSpriteBatchNode *)spritesheet levelKey:(NSString *)levelKey levelData:(NSDictionary *)levelData locked:(BOOL)locked stars:(int)starCount{
     if ((self = [super init])) {
 //        self.levelNumber = levelNumber;
+        _spritesheet = spritesheet;
+        self.levelKey = levelKey;
         self.levelData = levelData;
         
         //background
@@ -26,27 +29,42 @@
         self.normalImage = [CCSprite spriteWithSpriteFrame:frame];
         
         if (locked) {
-            lock = [CCSprite spriteWithSpriteFrameName:@"Lock.png"];
-            [spritesheet addChild:lock z:1];
+            [self showLock];
         }
         else
         {        
-            levelName = [CCLabelTTF labelWithString:levelKey fontName:@"Arial-BoldMT" fontSize:dscale(20)];
-            [self addChild:levelName z:1];
-            
-            //stars
-            star_1 = [self giveMeStar:starCount--];
-            star_2 = [self giveMeStar:starCount--];
-            star_3 = [self giveMeStar:starCount--];
-            [spritesheet addChild:star_1 z:1];
-            [spritesheet addChild:star_2 z:1];
-            [spritesheet addChild:star_3 z:1];
+            [self showLevelKey];
+            [self showStars:starCount];
         }
     }
     return self;
 }
 
-#pragma mark - Star
+#pragma mark - Status & Appearance
+-(void)showLevelKey{
+    levelName = [CCLabelTTF labelWithString:self.levelKey fontName:@"Arial-BoldMT" fontSize:dscale(20)];
+    [self addChild:levelName z:1];
+}
+
+-(void)showLock{
+    lock = [CCSprite spriteWithSpriteFrameName:@"Lock.png"];
+    [_spritesheet addChild:lock z:1];
+}
+
+-(void)hideLock{
+    [lock removeFromParentAndCleanup:YES];
+}
+
+-(void)showStars:(int)starCount{
+    //stars
+    star_1 = [self giveMeStar:starCount--];
+    star_2 = [self giveMeStar:starCount--];
+    star_3 = [self giveMeStar:starCount--];
+    [_spritesheet addChild:star_1 z:1];
+    [_spritesheet addChild:star_2 z:1];
+    [_spritesheet addChild:star_3 z:1];
+}
+
 -(CCSprite *)giveMeStar:(int)starCount{
     return starCount>0?[CCSprite spriteWithSpriteFrameName:@"StarBright.png"]:[CCSprite spriteWithSpriteFrameName:@"StarDark.png"];
 }
@@ -73,8 +91,9 @@
 -(void)setHighlighted:(BOOL)highlighted{
     if (highlighted) {
         CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"LevelBackgroundHighlight.png"];
-//        [background setDisplayFrame:frame];
-        [((CCSprite *)self.selectedImage) setDisplayFrame:frame];
+        [((CCSprite *)self.normalImage) setDisplayFrame:frame];
+        [self showLevelKey];
+        [self hideLock];
     }
 }
 

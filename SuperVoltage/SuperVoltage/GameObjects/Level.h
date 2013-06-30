@@ -14,6 +14,7 @@
 }
 
 //@property (nonatomic) int levelNumber;
+@property (nonatomic, strong) NSString *levelKey;
 @property (nonatomic, strong) NSDictionary *levelData;
 @property (nonatomic) BOOL highlighted;
 

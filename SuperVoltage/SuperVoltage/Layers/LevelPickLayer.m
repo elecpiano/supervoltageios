@@ -97,6 +97,8 @@
     levelGroupDictionary = [[NSMutableDictionary alloc] init];
     int groupCount = [GAME.gameLevelGroups count];
     int levelIndex = 1;
+    BOOL itemHighlighted = NO;
+    
     for (int n=1; n<=groupCount; n++) {
         NSString *groupKey = [NSString stringWithFormat:@"Group-%d",n];
         LevelGroup *levelGroup = [[LevelGroup alloc] init];
@@ -116,12 +118,17 @@
                 starCount = levelScore.stars;
                 isLocked = NO;
             }
-            
+
             NSDictionary *levelData = levelGroupData[levelKey];
+            Level *level = [levelGroup addLevel:levelKey levelData:levelData locked:isLocked stars:starCount];
+
+            if (!levelScore && !itemHighlighted){
+                level.highlighted = YES;
+                itemHighlighted = YES;
+            }
             
-            [levelGroup addLevel:levelKey levelData:levelData locked:isLocked stars:starCount];
             levelIndex++;
-        }        
+        }
     }
     
     //make an array of LevelGroup object to populate the CCScrollLayer
